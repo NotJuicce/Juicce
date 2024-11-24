@@ -1,0 +1,406 @@
+/* Base Styles */
+body {
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    color: #ffffff;
+    background-color: #000000;
+  .nav-links {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 30px; /* Espaciado entre enlaces */
+  }
+  
+  .nav-links li {
+      font-size: 18px;
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    gap: 20px; /* Espaciado entre "Home" y "Projects" */
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 10px; /* Espaciado entre el enlace y los íconos */
+}
+
+.nav-links a:hover {
+    background-color: #ff0000;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px; /* Espaciado entre los íconos */
+}
+
+.social-icons img {
+    width: 25px; /* Ajuste de tamaño de íconos */
+    height: 25px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Efecto de aumento al pasar el ratón */
+}
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px; /* Espaciado entre enlaces */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #ff0000;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px; /* Espaciado entre íconos */
+}
+
+.social-icons img {
+    width: 30px; /* Tamaño de los íconos */
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el ratón */
+}
+
+  .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .nav-links a:hover {
+      background-color: #ff0000; /* Cambia color al pasar el mouse */
+      color: white;
+  }
+   
+    .background-img {
+        position: fixed; /* Fija la imagen en una posición absoluta */
+        top: 0; /* Coloca la imagen en la parte superior */
+        left: 0; /* Coloca la imagen en la esquina izquierda */
+        width: 100%; /* La imagen cubre todo el ancho de la pantalla */
+        height: 100%; /* La imagen cubre toda la altura de la pantalla */
+        z-index: -1; /* Manda la imagen detrás del contenido */
+        object-fit: cover; /* Ajusta la imagen para que cubra todo sin deformarse */
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%; /* Ocupa toda la altura del viewport */
+        overflow-x: hidden; /* Elimina el scroll horizontal si existe */
+    }
+    .container {
+        min-height: 100vh; /* Asegura que el contenido principal cubra la pantalla */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centra verticalmente el contenido */
+    }
+      h1, p {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.904); /* Sombra negra suave */
+      }
+      .game-link {
+        background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+        color: rgb(255, 255, 255); /* Texto blanco */
+        padding: 20px; /* Espaciado interno */
+        text-align: center; /* Centra el texto dentro del marco */
+        border-radius: 10px; /* Bordes redondeados */
+        margin: 20px auto; /* Centra el marco horizontalmente */
+        width: 50%; /* Ajusta el ancho al 50% de la pantalla */
+        max-width: 500px; /* Limita el tamaño máximo para pantallas grandes */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
+      }
+      .audio-player {
+        text-align: center;
+        margin: 20px auto;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        width: 400px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+      }
+      
+      .audio-player button {
+        background-color: #fc2465;
+        color: white;
+        font-family: 'Press Start 2P', cursive;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      
+      .audio-player button:hover {
+        background-color: #ff3075;
+      }
+      
+    
+    /* Cambiar el color de los enlaces cuando ya han sido visitados */
+    a:visited {
+      color: #fff; /* Cambia el color a blanco, o cualquier otro que desees */
+    }
+    
+    /* Si quieres que el enlace cambie de color al pasar el cursor */
+    a:hover {
+      color: #000000; /* Cambia el color al pasar el ratón, por ejemplo, un color de acento */
+    }
+
+      .social-media {  background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+      color: rgb(255, 255, 255); /* Texto blanco */
+      padding: 20px; /* Espaciado interno */
+      text-align: center; /* Centra el texto dentro del marco */
+      border-radius: 10px; /* Bordes redondeados */
+      margin: 20px auto; /* Centra el marco horizontalmente */
+      width: 50%; /* Ajusta el ancho al 50% de la pantalla */
+      max-width: 500px; /* Limita el tamaño máximo para pantallas grandes */
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
+      a {
+    color: #fff; /* Cambia el color de los enlaces a blanco, o cualquier color que prefieras */
+    text-decoration: none; /* Elimina el subrayado */
+  }
+  
+  /* Cambiar el color de los enlaces cuando ya han sido visitados */
+  a:visited {
+    color: #fff; /* Cambia el color a blanco, o cualquier otro que desees */
+  }
+  
+  /* Si quieres que el enlace cambie de color al pasar el cursor */
+  a:hover {
+    color: #4d0019; /* Cambia el color al pasar el ratón, por ejemplo, un color de acento */
+  }
+  .logo {
+    width: 25px; /* Ajusta el ancho */
+    height: auto; /* Mantén la proporción */
+}
+
+.logo2 {
+  width: 25px; /* Ajusta el ancho */
+  height: auto; /* Mantén la proporción */
+}
+    }
+
+
+.logo3 {
+  width: 25px; /* Ajusta el ancho */
+  height: auto; /* Mantén la proporción */
+}
+
+
+.logo4 {
+  width: 25px; /* Ajusta el ancho */
+  height: auto; /* Mantén la proporción */
+}
+    
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Navbar */
+.navbar {
+    margin-bottom: 2rem;
+}
+
+    .navbar nav a {
+        margin: 0 1rem;
+        text-decoration: none;
+        color: #ffffff;
+        transition: color 0.3s;
+    }
+
+        .navbar nav a:hover {
+            color: #ff79c6;
+        }
+        .navbar {
+          position: fixed; /* Fija la barra en la parte superior */
+          top: 0;
+          left: 0;  /* Asegúrate de que se alinee con la parte superior izquierda */
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro translúcido */
+          padding: 10px 0;
+          z-index: 10; /* Asegura que quede encima de otros elementos */
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
+          margin: 0; /* Elimina márgenes adicionales */
+      }
+      
+/* Main Content */
+.main-content .profile {
+    margin-top: 2rem;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    color: #ff0000e1;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #8be9fd;
+}
+
+/* About Section */
+.about-box {
+    margin: 2rem auto;
+    padding: 1rem;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.116);
+}
+
+    .about-box h2 {
+        font-size: 1.2rem;
+        color: #ff79c6;
+    }
+
+    .about-box p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+.tags {
+    margin-top: 1rem;
+}
+
+    .tags span {
+        background: #0203036e;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem;
+        display: inline-block;
+        border-radius: 5px;
+        font-size: 0.8rem;
+        color: #ffffff;
+    }
+  
+  
+  
+  .projects-container h1 {
+      font-size: 32px;
+      color: #ff6b6b;
+      font-family: 'Press Start 2P', cursive;
+      margin-bottom: 30px;
+  }
+  
+  .project-list {
+      display: flex;
+      flex-direction: column; /* Coloca los proyectos en columna */
+      align-items: center;
+      gap: 20px; /* Espaciado entre proyectos */
+  }
+  
+  .project {
+      background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+      padding: 15px;
+      border-radius: 8px;
+      width: 80%;
+      max-width: 600px;
+      text-align: left;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .project h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #ff6b6b;
+  }
+  
+  .project a {
+      color: #000000;
+      text-decoration: none;
+      padding: 5px 10px;
+      background-color: #ff6b6b;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+  }
+  
+  .project a:hover {
+      background-color: #ff4b4b;
+  }
+  .audio-player2 {
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .audio-player2 button {
+    background-color: #fc2465;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .audio-player2 button:hover {
+    background-color: #ff3075;
+  }
+  

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="Favicon.jpg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juicce - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIF Background</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url(elshuis.gif) no-repeat center center fixed;
+            background-size: cover; /* Hace que el GIF cubra toda la pantalla */
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>
+        </nav>
+    </header>
+    
+   
+    <div class="container">
+        <header class="navbar">
+            <nav>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <div class="profile">
+                <h1 class="title">Hello! I'm Juicce</h1>
+                <p class="subtitle">A Game Developer, artist & Programmer</p>
+            </div>
+
+            <section class="about">
+                <div class="about-box">
+                    <h2>About me</h2>
+                    <p>
+                        I'm a passionate developer with a love for art, coding, and video games. I enjoy creating unique, immersive experiences that combine technology and creativity. Whether I'm programming mechanics for a new game or crafting digital art, I aim to bring ideas to life.
+                    </p>
+                </div>
+                <div class="tags">
+                    <span>🎮 Game Dev</span>
+                    <span>🎨 Artist</span>
+                    <span>💻 Programmer</span>
+                </div>
+            </section>
+        </main>
+    </div>
+    <div class="game-link">
+        <h2>Play Funky 
+            Panic Attack here!</h2>
+        <a href="https://store.steampowered.com/app/3001060/Funky_Panic_Attack/" target="_blank">Play Now</a>
+    </div>      
+
+    <div class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="projects.html">Projects</a>
+                <div class="social-icons">
+                    <a href="https://x.com/juicc_e" target="_blank">
+                        <img src="x-logo-twitter-elon-musk_dezeen_2364_col_0.webp" alt="Twitter Logo" class="logo">
+                    </a>
+                    <a href="https://www.instagram.com/juicce.e/" target="_blank">
+                        <img src="Instagram.png" alt="Instagram Logo" class="logo">
+                    </a>
+                    <a href="https://www.youtube.com/@juiccedev" target="_blank">
+                        <img src="shutub.png" alt="Youtube Logo" class="logo">
+                    </a>
+                    <a href="https://bsky.app/profile/juicc.bsky.social" target="_blank">
+                        <img src="we.jpg" alt="Bluesky Logo" class="logo">
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="audio-player">
+        <button id="play-btn">🎵 Play</button>
+        <button id="pause-btn">⏸️ Pause</button>
+        <audio id="background-audio" loop>
+          <source src="music.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+      
+      <script src="script.js"></script>
+      
+      <p id="audio-warning" style="display: none; color: red;">
+        Click on Play to enable the background music!
+    </p>
+    
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('background-audio');
+            const warning = document.getElementById('audio-warning');
+    
+            audio.play().catch(() => {
+                // Muestra el mensaje si el autoplay está bloqueado
+                warning.style.display = 'block';
+            });
+        });
+    </script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const playButton = document.getElementById('play-btn');
+            const audio = document.getElementById('background-audio');
+            let clickCount = 0;
+            let easterEggTriggered = false;
+    
+            // Función para mostrar la notificación
+            function showNotification(message) {
+                const notification = document.createElement('div');
+                notification.style.position = 'fixed';
+                notification.style.bottom = '20px';
+                notification.style.right = '20px';
+                notification.style.backgroundColor = '#28a745';
+                notification.style.color = 'white';
+                notification.style.padding = '15px';
+                notification.style.borderRadius = '5px';
+                notification.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.2)';
+                notification.style.fontFamily = 'Arial, sans-serif';
+                notification.innerText = message;
+                document.body.appendChild(notification);
+    
+                // Eliminar la notificación después de 5 segundos
+                setTimeout(() => {
+                    notification.remove();
+                }, 5000);
+            }
+    
+            // Función para el Easter Egg
+            function triggerEasterEgg() {
+                document.body.style.transition = 'background 1s ease';
+                document.body.style.background = `hsl(${Math.random() * 360}, 50%, 50%)`;
+            }
+    
+            // Manejo del botón de Play
+            playButton.addEventListener('click', () => {
+                clickCount++;
+                audio.play();
+    
+                // Activa el Easter Egg al llegar a 15 clics
+                if (clickCount === 15 && !easterEggTriggered) {
+                    easterEggTriggered = true;
+                    showNotification("You found an Easter Egg!");
+                    triggerEasterEgg();
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
