@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Juicce Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('elshuis.gif') no-repeat center center fixed;
+            background-size: cover; /* Hace que el GIF cubra toda la pantalla */
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .audio-player2 {
+            margin-top: 20px;
+        }
+
+        .audio-player2 button {
+            margin-right: 10px;
+            font-size: 14px;
+            padding: 8px;
+        }
+
+        /* Estilos agregados */
+        .navbar nav {
+            display: flex;
+            justify-content: space-between; /* Mantener enlaces a la izquierda, íconos a la derecha */
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            font-family: 'Press Start 2P', sans-serif;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px; /* Espaciado entre los íconos */
+        }
+
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.2); /* Efecto de zoom al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+            <!-- Contenedor de los íconos -->
+            <div class="social-icons">
+                <a href="https://x.com/juicc_e" target="_blank">
+                    <img src="x-logo-twitter-elon-musk_dezeen_2364_col_0.webp" alt="Twitter Logo">
+                </a>
+                <a href="https://www.instagram.com/juicce.e/" target="_blank">
+                    <img src="Instagram.png" alt="Instagram Logo">
+                </a>
+                <a href="https://www.youtube.com/@juiccedev" target="_blank">
+                    <img src="shutub.png" alt="YouTube Logo">
+                </a>
+                <a href="https://bsky.app/profile/juicc.bsky.social" target="_blank">
+                    <img src="we.jpg" alt="Bluesky Logo">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="projects-container">
+        <h1>My Projects</h1>
+        <div class="project-list">
+            <div class="project">in
+                <h2>Funky Panic Attack</h2>
+                <img src="header.jpg" alt="">
+                <p>
+                    Can Luna navigate this funky world to find Halloween? - Talk to strange and compelling characters!
+                    Freeze obstacles and activate the fast Chili Pepper Mode, but beware - it also makes you
+                    uncontrollably jumpy!
+                </p>
+                <a href="https://store.steampowered.com/app/3001060/Funky_Panic_Attack/" target="_blank">Play Now!</a>
+            </div>
+
+            <div class="audio-player2">
+                <button id="play-btn">🎵 Play</button>
+                <button id="pause-btn">⏸️ Pause</button>
+                <audio id="background-audio" loop>
+                    <source src="music.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </main>
+
+    <canvas id="star-canvas"></canvas>
+
+    <script>
+        // Selección de elementos
+        const audio = document.getElementById('background-audio');
+        const playBtn = document.getElementById('play-btn');
+        const pauseBtn = document.getElementById('pause-btn');
+        const canvas = document.getElementById('star-canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Ajustar el tamaño del canvas al tamaño de la ventana
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Reproducción automática al cargar la página
+        window.addEventListener('DOMContentLoaded', () => {
+            audio.play().catch((error) => {
+                console.log('Autoplay bloqueado, el usuario debe interactuar con la página.');
+            });
+        });
+
+        // Botón de reproducción
+        playBtn.addEventListener('click', () => {
+            audio.play();
+        });
+
+        // Botón de pausa
+        pauseBtn.addEventListener('click', () => {
+            audio.pause();
+        });
+
+        // Generar estrellas
+        let stars = [];
+        for (let i = 0; i < 100; i++) {
+            stars.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 2,
+                speed: Math.random() * 0.5
+            });
+        }
+
+        // Dibujar estrellas
+        function drawStars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            stars.forEach(star => {
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'white';
+                ctx.fill();
+                star.x -= star.speed;
+                if (star.x < 0) star.x = canvas.width;
+            });
+            requestAnimationFrame(drawStars);
+        }
+
+        drawStars();
+    </script>
+</body>
+</html>
